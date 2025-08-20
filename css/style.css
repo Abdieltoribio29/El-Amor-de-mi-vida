@@ -6,6 +6,7 @@ body {
     background: linear-gradient(180deg, #6EC1E4, #F7A6B6);
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Portada */
@@ -21,7 +22,7 @@ body {
     font-size: 3rem;
     width: 70%;
     line-height: 1;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    text-shadow: 5px 5px 7px #ff4fa4;
     margin: 0;
     padding: 0;
 }
@@ -31,16 +32,19 @@ body {
 .stitch-img {
     position: absolute;
     left: 10px;
+      filter: drop-shadow(10px 10px 12px #fa2ab8);
 }
 .angel-img {
     position: absolute;
     right: 10px;
+      filter: drop-shadow(10px 10px 12px #fa2ab8);
+
 }
 
 /* Carrusel infinito */
 .carrusel-section {
     overflow: hidden;
-    margin: 20px auto;
+    margin: 10px auto;
     width: 95%;
 }
 .carrusel {
@@ -49,17 +53,22 @@ body {
 .carrusel-track {
     display: flex;
     gap: 10px;
-    animation: scroll 20s linear infinite;
+    animation: scroll1 20s linear infinite;
+    padding: 10px 0;
 }
 .carrusel-track img {
     width: 250px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px white;
     flex-shrink: 0;
+    transition: transform 0.3s;
 }
-@keyframes scroll {
+@keyframes scroll1 {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+}
+.carrusel-track img:hover{
+    transform: scale(1.1) rotate(3deg);
 }
 
 /* Galería */
@@ -68,7 +77,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    padding: 10px;
+    padding: 5px 10px 20px 10px;
 }
 .galeria-img {
     width: 140px;
@@ -80,40 +89,143 @@ body {
     transform: scale(1.2);
 }
 
-/* Videos */
-.videos {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding: 10px;
+.seccion-videos {
+  padding: 0 10px;
+  background-image: url('../img/Fondo1.webp');
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 125%;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  z-index: 1;
 }
-.videos video {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 15px;
-    border: 3px solid white;
+
+.seccion-videos::before{
+    z-index: -1;
+    content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.566); /* oscuridad */
+}
+
+.seccion-videos h2 {
+    z-index: 100;
+  margin-bottom: 5px;
+  color: rgb(0, 234, 255);
+  font-size: 2rem;
+text-shadow: 2px 2px 5px rgba(0, 234, 255, 0.667);
+}
+
+.video-carrusel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+  max-width: 100%;
+  padding: 20px 0;
+}
+
+.video-item {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-item:hover {
+  transform: scale(1.1);
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.858);
+}
+
+/* mostrar spotlight cuando hay hover */
+.video-carrusel:hover::before {
+  opacity: 1;
+}
+
+/* animación scroll infinito */
+@keyframes scroll {
+  from {
+    transform: translateX(10%);
+  }
+  to {
+    transform: translateX(-320%);
+  }
+}
+
+/* PAUSAR animación cuando se hace hover en el carrusel */
+.video-carrusel:hover .video-track {
+  animation-play-state: paused;
+}
+
+/* en móviles, permitimos tocar para spotlight */
+.video-item.active {
+  transform: scale(1.1);
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.video-carrusel.active::before {
+  opacity: 1;
+    animation-play-state: paused;
+
 }
 
 /* Botón sorpresa */
 .sorpresa {
-    margin: 40px 0;
+    margin: 30px 0;
+}
+.regalo{
+  width: 130%;
+  position: absolute;
+  left: -15%;
+  align-self: center;
+  z-index: -1;
+  overflow-x: hidden;
+}
+.sorpresa h2{
+  text-shadow: 5px 5px 6px #21deff;
 }
 #btnSorpresa {
-    background: white;
+    background-image: url('/img/Fondo2.webp');
+    background-size: 140%;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #6EC1E4;
     font-size: 1.2em;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 15px;
+    padding: 0;
+    border-radius: 110%;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
+    border-color: #ffffff;
 }
 #btnSorpresa:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(10deg);
+    border-color: #21deff;
 }
 #mensajeOculto {
     margin-top: 20px;
+    padding: 0 10px;
+    text-shadow: 2px 2px 3px #00d5ffbb;
 }
 .oculto {
     display: none;
@@ -122,13 +234,47 @@ body {
     width: 120px;
     margin-top: 10px;
 }
+.regalo2{
+  width: 120px;
+}
 
 /* Footer */
 footer {
-    padding: 20px;
-    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.366);
     border-top: 2px solid white;
     font-size: 1em;
+    display: flex;
+    align-items: center;
+    width: 95%;
+}
+footer img{
+  width: 60px;
+}
+footer p{
+  position: relative;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer p::after{
+  font-size: 1em;
+  content: "💙Gracias por siempre apoyarme💖"; /* si no usas data-text */
+  position: absolute;
+  left: -3px;/* desplazamiento horizontal */
+  top: 2px;  /* desplazamiento vertical */
+  z-index: -1;
+  background: linear-gradient(90deg, #2ac6fa, #ff00aa);
+  -webkit-background-clip: text;
+}
+
+.Angel{
+  filter: drop-shadow(10px 10px 15px #2ac6fa);
+}
+.Stitch{
+  filter: drop-shadow(10px 10px 15px #fa2ab8);
 }
 
 /* 📱 Responsividad para móviles */
@@ -149,11 +295,11 @@ footer {
 
 @media (max-width: 480px) {
     .titulo {
-        font-size: 1.4em;
+        font-size: 1.6em;
         padding: 0 10px;
     }
     .stitch-img, .angel-img {
-        width: 45px;
+        width: 65px;
     }
     .carrusel-track img {
         width: 160px;
@@ -163,7 +309,7 @@ footer {
     }
     #btnSorpresa {
         font-size: 1em;
-        padding: 8px 15px;
+        padding: 3px 1px;
     }
     #mensajeOculto img {
         width: 100px;
@@ -197,6 +343,8 @@ footer {
 .corazones span:nth-child(6) { left: 72%; animation-duration: 14s; font-size: 2em; }
 .corazones span:nth-child(7) { left: 82%; animation-duration: 16s; font-size: 1.7em; }
 .corazones span:nth-child(8) { left: 92%; animation-duration: 20s; font-size: 2.3em; }
+.corazones span:nth-child(9) { left: 25%; animation-duration: 30s; font-size: 2.3em; }
+
 
 @keyframes flotar {
     0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
@@ -230,6 +378,13 @@ footer {
 .corazones span:nth-child(6) { left: 72%; animation-duration: 14s; font-size: 2em; }
 .corazones span:nth-child(7) { left: 82%; animation-duration: 16s; font-size: 1.7em; }
 .corazones span:nth-child(8) { left: 92%; animation-duration: 20s; font-size: 2.3em; }
+.corazones span:nth-child(9) { left: 21%; animation-duration: 30s;}
+.corazones span:nth-child(10) { left: 66%; animation-duration: 20s;}
+
+.corazones img{
+    width: 80px;
+}
+
 
 @keyframes flotar {
     0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
@@ -283,15 +438,336 @@ footer {
 .videos-extra h2 {
     font-size: 1.8em;
     margin-bottom: 15px;
+    color: rgb(252, 59, 200);
+    text-shadow: 2px 2px 5px rgba(249, 79, 204, 0.762);
 }
 .videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 5px;
+    padding: 11px;
 }
 .videos-grid video {
-    width: 100%;
+    width: 90%;
     border-radius: 15px;
     border: 3px solid white;
+    justify-self: center;
+}
+.videos-extra img{
+    width: 100px;
+    right: 2%;
+    position:absolute;
+}
+
+/* 💌 Carta */
+.carta-section {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+  height: 180px;
+}
+.carta {
+  width: 250px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.carta-front{
+    font-size: 1.3em;
+text-shadow: 2px 2px 5px rgb(0, 0, 0);
+
+}
+.carta-front, .carta-back {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/Sobre.png');
+  color: white;
+  background-position: center;
+  background-size: 105%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+}
+.carta-back {
+  background: #6699ff;
+  transform: rotateY(180deg);
+}
+.carta.flipped .carta-front {
+  transform: rotateY(180deg);
+}
+.carta.flipped .carta-back {
+  transform: rotateY(0deg);
+}
+.carta-front {
+  transition: transform 0.6s;
+}
+.carta-back {
+  transition: transform 0.6s;
+}
+/* 🎶 Música */
+.musica-section {
+  text-align: center;
+  margin: 40px 0 0 0;
+  width: 100%;
+}
+.musica-section audio {
+    position: relative;
+    top: 238px;
+    height: 40px;
+}
+.musica-section h2{
+    text-shadow: 2px 2px 5px rgba(49, 182, 239, 0.773);
+    margin-bottom: -12px;
+}
+.musica-section img{
+    width: 100px;
+    position: absolute;
+    top: 511.4%;
+    left: 2px;
+}
+.caset{
+    width: 100%;
+    background-image: url('/img/Caset.png');
+    height: 330px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+/* 📊 Favoritos */
+.favoritos-section{
+    max-width: 100%;
+    padding: 10px 10px 20px 10px;
+    margin: 0;
+}
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+.favoritos-grid div {
+  background: #6699ff;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}
+.favoritos-section h2{
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+
+
+/* 📂 Sección carpeta */
+.folder-album {
+  padding: 1px 10px 10px 10px;
+  background: #fdfdfd;
+  text-align: center;
+}
+
+.folder-album h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #2b2d42;
+  margin-top: 15px;
+  text-shadow: 5px 5px 7px #30c1ffe7;
+}
+
+.folder-row {
+  display: flex;
+  justify-content: center;
+  gap: -40px; /* superposición */
+  position: relative;
+}
+
+.folder-row img {
+  width: 180px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-left: -40px; /* efecto apilado */
+  background: #fff;
+  z-index: 10;
+}
+
+.folder-row img:first-child {
+  margin-left: 0; /* la primera imagen no se superpone */
+}
+
+.folder-row img:hover {
+  transform: translateY(-15px) scale(1.02) rotate(-3deg) translateX(-10px);
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* 📸 Modal */
+.folder-modal {
+  display: none; /* 👈 así debe estar al inicio */
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.folder-modal img {
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
+}
+
+/* Botones */
+.folder-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.folder-prev, .folder-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.folder-prev { left: 20px; }
+.folder-next { right: 20px; }
+
+.folder-prev:hover, .folder-next:hover {
+  color: #ff7eb9;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 480px) {
+  .folder-row {
+    overflow-x: auto;
+    padding: 25px 10px 10px 10px;
+  }
+
+  .folder-row img {
+    width: 160px;
+    margin-left: -115px;
+  }
+
+  .folder-close { font-size: 30px; right: 20px; }
+  .folder-prev, .folder-next { font-size: 35px; }
+}
+
+/* 🎀 Título */
+.pinterest-title {
+  text-align: center;
+  font-size: 1.4em;
+  color: #ff4fa3; /* rosado Angel */
+  margin-bottom: 20px;
+  text-shadow: 5px 5px 7px #ff4fa4b3;
+}
+
+/* 📌 Estilo Pinterest */
+.pinterest-collage {
+  padding: 5px 20px;
+  background: #e3f2fd; /* azul Stitch suave */
+}
+
+.pinterest-grid {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.pinterest-grid img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pinterest-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgb(255, 10, 173);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .pinterest-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .pinterest-grid {
+    column-count: 3;
+  }
+}
+
+/* 📌 Modal */
+.pinterest-modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.pinterest-modal img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+/* 📌 Texto debajo */
+#pinterestCaption {
+  margin: 15px auto;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Botón cerrar */
+.pinterest-modal .close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.pinterest-modal .close:hover {
+  color: #ff4fa3;
 }

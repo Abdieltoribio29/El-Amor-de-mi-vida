@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdiel & Massiel 💙💖</title>
+    <link rel="icon" type="image/png" href="/img/StichYAngel.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
 </head>
@@ -19,14 +20,37 @@
     <span>💙</span>
     <span>💖</span>
     <span>💙</span>
+    <span><img src="/img/Stitch3.jpg" alt=""></span>
+    <span><img src="/img/Angel2.png" alt=""></span>
 </div>
 
     <!-- Portada -->
     <header class="portada">
         <img src="img/Stich.png" alt="Stitch" class="stitch-img">
-        <h1 class="titulo">Nuestro rinconcito de amor 💙💖</h1>
+        <h1 class="titulo">Nuestro rinconcito de 💙amor💖</h1>
         <img src="img/Angel.png" alt="Angel" class="angel-img">
     </header>
+<!-- 📌 Sección estilo Pinterest -->
+<section class="pinterest-collage">
+  <h2 class="pinterest-title">📸 Nuestros Momentos</h2>
+  <div class="pinterest-grid">
+    <img src="/img/Amor5.jpg" alt="Foto 1">
+    <img src="/img/Amor8.jpg" alt="Foto 2">
+    <img src="/img/Amor12.jpeg" alt="Foto 3">
+    <img src="/img/Amor13.jpeg" alt="Foto 4">
+    <img src="/img/Amor18.jpeg" alt="Foto 5">
+    <img src="/img/Amor15.jpeg" alt="Foto 6">
+    <img src="/img/Amor16.jpeg" alt="Foto 7">
+    <img src="/img/Amor17.jpeg" alt="Foto 8">
+  </div>
+</section>
+
+<!-- 📌 Modal para imagen ampliada -->
+<div id="pinterestModal" class="pinterest-modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="pinterestModalImg">
+  <div id="pinterestCaption"></div>
+</div>
 
     <!-- Carrusel -->
     <!-- Carrusel -->
@@ -47,15 +71,31 @@
         <img src="img/Amor9.jpg" alt="Foto 6" class="galeria-img">
     </section>
 
-    <!-- Videos -->
-    <section class="videos">
-        <video src="video/video1.mp4" autoplay muted loop></video>
-        <video src="video/video2.mp4" autoplay muted loop></video>
-    </section>
+    <!-- Sección de videos -->
+<section class="seccion-videos">
+  <h2>💙Nuestros videos💖</h2>
+  <div class="video-carrusel">
+    <div class="video-track">
+      <div class="video-item"><video src="video/Video5.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video6.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video7.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video8.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video9.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video10.mp4" autoplay muted loop playsinline></video></div>
+      <!-- duplicamos para efecto infinito -->
+      <div class="video-item"><video src="video/Video5.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video6.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video7.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video8.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video9.mp4" autoplay muted loop playsinline></video></div>
+      <div class="video-item"><video src="video/Video10.mp4" autoplay muted loop playsinline></video></div>
+    </div>
+  </div>
+</section>
 
     <!-- Nueva Galería Polaroid -->
 <section class="galeria-polaroid">
-    <h2>Nuestros recuerdos 💕</h2>
+    <h2>🌟Nuestros recuerdos💕</h2>
     <div class="polaroid">
         <img src="img/Amor7.jpg" alt="Recuerdo 1">
         <p>Mi primer cumpleaños juntos😍</p>
@@ -72,29 +112,94 @@
 
 <!-- Nueva Sección de Videos -->
 <section class="videos-extra">
-    <h2>Videos divertidos 🎥</h2>
+  <img src="/img/Angel4.png" alt="">
+    <h2>🎥Videos divertidos  .   .     .    .        .</h2>
     <div class="videos-grid">
-        <video src="video/video3.mp4" autoplay muted loop></video>
-        <video src="video/video4.mp4" autoplay muted loop></video>
-        <video src="video/video5.mp4" autoplay muted loop></video>
-        <video src="video/video6.mp4" autoplay muted loop></video>
+        <video src="video/Video1.mp4" autoplay muted loop></video>
+        <video src="video/Video2.mp4" autoplay muted loop></video>
+        <video src="video/Video3.mp4" autoplay muted loop></video>
+        <video src="video/Video4.mp4" autoplay muted loop></video>
     </div>
 </section>
 
+    <!-- 💌 Carta de amor interactiva -->
+<!-- 💌 Carta de amor -->
+<section class="carta-section">
+  <div class="carta">
+    <div class="carta-front">💌 Abrir carta</div>
+    <div class="carta-back">
+      <p>¿Te acuerdas de la frase que siempre te decía? ¿Esa frase que te decía que jamás dejaré de cumplir?💙💖</p>
+      <p>✨Te amo y te amaré siempre, en esta y mil vidas✨</p>
+    </div>
+  </div>
+</section>
 
+<!-- 🎶 Música -->
+<section class="musica-section">
+  <h2>Nuestra canción🎶</h2>
+  <img src="/img/Stitch2.png" alt="">
+  <div class="caset">
+  <audio controls autoplay loop>
+    <source src="/video/MILO J - M.A.I (Video Oficial) [MldGX_mbS-o].mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+  </div>
+</section>
 
-    <!-- Botón sorpresa -->
+<!-- 📊 Favoritos -->
+<section class="favoritos-section">
+  <h2>📊 Nuestros favoritos</h2>
+  <div class="favoritos-grid">
+    <div>🍕La comida favorita de ella es el arroz con puerco y ensalada de papa y el de él es la sopa de lentejas</div>
+    <div>🎬La película facorita de ella es búsqueda implacable y la de él es transformer</div>
+    <div>🌍El país que más él quiere visitar es Suiza y el que más le gusta a ella es Grecia</div>
+    <div>💖Los colores favoritos de el son el blanco y el negro y los de ella son el rosado y morado</div>
+  </div>
+</section>
+
+<!-- 📂 Álbum estilo carpeta -->
+<section class="folder-album">
+  <h2>👑Nuestras animaciones❣️</h2>
+  <div class="folder-row">
+    <img src="img/Animado1.jpeg" alt="Foto 1">
+    <img src="img/Animado2.jpeg" alt="Foto 2">
+    <img src="img/Animado3.jpeg" alt="Foto 3">
+    <img src="img/Animado4.jpeg" alt="Foto 4">
+    <img src="img/Animado5.jpeg" alt="Foto 5">
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="folder-modal" id="folderModal">
+  <span class="folder-close">&times;</span>
+  <span class="folder-prev">&#10094;</span>
+  <span class="folder-next">&#10095;</span>
+  <img class="folder-full" id="folderFullImg">
+</div>
+
+<!-- Botón sorpresa -->
     <section class="sorpresa">
-        <button id="btnSorpresa">Haz clic aquí ❤️</button>
+      <h2>Haz clic en el regalo</h2>
+      <img src="/img/Regalo2.png" alt="" class="regalo">
+        <button id="btnSorpresa"><img src="/img/Regalo.png" alt="" class="regalo2"></button>
         <div id="mensajeOculto" class="oculto">
             <p>Hecho con amor por Abdiel para Massiel 💙💖</p>
+            <p>Este pequeño regalo lo hice con el sentir de que te mereces que te den todo por la gran y maravillosa persona que eres.</p>
+            <p>Eres una mujer muy encantadora, alguien que de verdad no tiene límite en todas las cosas grandiosas que es.</p>
+            <p>Desde que llegaste a mi vida no e dejado de vivir cosas hermosas, fabulósas, divertídas, incluso hasta románticas contigo.</p>
+            <p>Quiero agradecerte por todo lo que has echo y has logrado cambiar dentro de mi y las cosas super hermosas que me hiciste vivir.</p>
+            <p>No tengo palabras ni mucho menos que hacer para devolvérte todo lo que me has dado estando conmigo.</p>
+            <p>Por eso con este regalo quiero darte al menos ese poquito de todas las cosas que quiero darte en esta vida y las mil próximas.</p>
+            <p>Te amo demasiado Massiel Daylin Vergara Reina y nunca dejaré de hacerlo, ni en esta, ni en mil vidas, porque para mi, eres El amor más grande que me pueden haber dado.</p>
             <img src="img/StichYAngel.png" alt="Stitch y Angel">
         </div>
     </section>
 
     <!-- Pie de página -->
     <footer>
-        Siempre juntos ❤️
+      <img src="/img/Angel3.png" alt="" class="Angel">
+        <p>💙Gracias por siempre apoyarme💖</p>
+      <img src="/img/Stitch4.png" alt="" class="Stitch">
     </footer>
 
 </body>
