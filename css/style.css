@@ -527,7 +527,6 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
 .musica-section img{
     width: 100px;
     position: absolute;
-    top: 511.4%;
     left: 2px;
 }
 .caset{
@@ -772,4 +771,5 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
   color: #ff4fa3;
 
 }
+
 
