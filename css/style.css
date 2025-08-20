@@ -193,6 +193,7 @@ text-shadow: 2px 2px 5px rgba(0, 234, 255, 0.667);
 /* Botón sorpresa */
 .sorpresa {
     margin: 30px 0;
+    overflow-x: hidden;
 }
 .regalo{
   width: 130%;
@@ -291,6 +292,9 @@ footer p::after{
     .galeria-img {
         width: 100px;
     }
+    body{
+        overflow-x: hidden;
+    }
 }
 
 @media (max-width: 480px) {
@@ -313,6 +317,9 @@ footer p::after{
     }
     #mensajeOculto img {
         width: 100px;
+    }
+    body{
+        overflow-x: hidden;
     }
 }
 
@@ -771,5 +778,6 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
   color: #ff4fa3;
 
 }
+
 
 
