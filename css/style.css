@@ -193,7 +193,7 @@ text-shadow: 2px 2px 5px rgba(0, 234, 255, 0.667);
 /* Botón sorpresa */
 .sorpresa {
     margin: 30px 0;
-    background-image: url('/img/Regalo2.png');
+    background-image: url('../img/Regalo2.png');
     background-position: 50% -35px;
     background-repeat: no-repeat;
     background-size: 120%;
@@ -203,7 +203,7 @@ text-shadow: 2px 2px 5px rgba(0, 234, 255, 0.667);
   text-shadow: 5px 5px 6px #21deff;
 }
 #btnSorpresa {
-    background-image: url('/img/Fondo2.webp');
+    background-image: url('../img/Fondo2.webp');
     background-size: 140%;
     background-repeat: no-repeat;
     background-position: center;
@@ -528,7 +528,7 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 .caset{
     width: 100%;
-    background-image: url('/img/Caset.png');
+    background-image: url('../img/Caset.png');
     height: 330px;
     background-position: center;
     background-size: 100%;
@@ -766,4 +766,5 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
 
 .pinterest-modal .close:hover {
   color: #ff4fa3;
+
 }
