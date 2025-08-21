@@ -428,34 +428,64 @@ footer p::after{
     line-height: 1;
 }
 
-.videos-extra {
-    margin: 40px 0;
-    text-align: center;
+/* 🎥 Estilos sección extra */
+#videosExtra {
+  text-align: center;
+  padding: 5px 10px 20px 10px;
+  background: linear-gradient(135deg, #87cefa, #ffb6c1);
 }
-.videos-extra h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: rgb(252, 59, 200);
-    text-shadow: 2px 2px 5px rgba(249, 79, 204, 0.762);
+
+#videosExtra h2 {
+  font-size: 28px;
+  color: #fc27d5;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 5px rgb(219, 20, 166);
 }
-.videos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 5px;
-    padding: 11px;
+
+.videos-extra-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
-.videos-grid video {
-    width: 90%;
-    border-radius: 15px;
-    border: 3px solid white;
-    justify-self: center;
+
+/* 🖼️ Tarjetas de video */
+.videos-extra-card {
+  position: relative;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.videos-extra img{
+
+.videos-extra-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* evita fullscreen accidental */
+}
+
+.videos-extra-card.active {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  z-index: 20;
+  border: solid 3px #fa2ab8;
+  box-shadow: 0 10px 30px #fa2ab8;
+}
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .videos-extra-card {
+    width: 110px;
+  }
+}
+
+.videos-extra-section img{
     width: 100px;
     right: 2%;
     position:absolute;
 }
-
 /* 💌 Carta */
 .carta-section {
   display: flex;
@@ -768,3 +798,4 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
   color: #ff4fa3;
 
 }
+
