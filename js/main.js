@@ -34,38 +34,38 @@ if (carta) {
   const carrusel = document.querySelector(".video-carrusel");
   let activeVideo = null;
 
-  videos.forEach(video => {
+  videos.forEach(videoss => {
     // PC hover → solo activar/desactivar audio
-    video.addEventListener("mouseenter", () => {
-      video.muted = false;
-      video.play().catch(() => {}); // fuerza play
+    videoss.addEventListener("mouseenter", () => {
+      videoss.muted = false;
+      videoss.play().catch(() => {}); // fuerza play
     });
 
-    video.addEventListener("mouseleave", () => {
-      video.muted = true;
+    videoss.addEventListener("mouseleave", () => {
+      videoss.muted = true;
     });
 
     // 📱 MÓVIL → tap/click para activar
-    video.parentElement.addEventListener("click", (e) => {
+    videoss.parentElement.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      if (activeVideo && activeVideo !== video) {
+      if (activeVideo && activeVideo !== videoss) {
         activeVideo.muted = true;
         activeVideo.parentElement.classList.remove("active");
         carrusel.classList.remove("active");
       }
 
-      if (video.parentElement.classList.contains("active")) {
-        video.muted = true;
-        video.parentElement.classList.remove("active");
+      if (videoss.parentElement.classList.contains("active")) {
+        videoss.muted = true;
+        videoss.parentElement.classList.remove("active");
         carrusel.classList.remove("active");
         activeVideo = null;
       } else {
-        video.muted = false;
-        video.play().catch(() => {}); // fuerza play por si el navegador lo pausa
-        video.parentElement.classList.add("active");
+        videoss.muted = false;
+        videoss.play().catch(() => {}); // fuerza play por si el navegador lo pausa
+        videoss.parentElement.classList.add("active");
         carrusel.classList.add("active");
-        activeVideo = video;
+        activeVideo = videoss;
       }
     });
   });
@@ -150,4 +150,30 @@ window.addEventListener("click", (e) => {
   if (e.target === pinterestModal) {
     pinterestModal.style.display = "none";
   }
+});
+
+document.querySelectorAll('#videosExtra .videos-extra-card').forEach(card => {
+  const videoEx = card.querySelector('.videos-extra-card video');
+
+  // ✅ PC: hover activa audio
+  card.addEventListener('mouseenter', () => {
+    videoEx.muted = false;
+    card.classList.add('active');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    videoEx.muted = true;
+    card.classList.remove('active');
+  });
+
+  // ✅ Móviles: tocar activa audio solo en ese video
+  card.addEventListener('touchstart', () => {
+    document.querySelectorAll('#videosExtra .videos-extra-card video').forEach(v => {
+      v.muted = true;
+      v.parentElement.classList.remove('active');
+    });
+
+    videoEx.muted = false;
+    card.classList.add('active');
+  });
 });
