@@ -151,6 +151,12 @@ text-shadow: 2px 2px 5px rgba(0, 234, 255, 0.667);
   object-fit: cover;
 }
 
+.video-item:hover{
+    transform: scale(1.1);
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.858);
+}
+
 /* mostrar spotlight cuando hay hover */
 .video-carrusel:hover::before {
   opacity: 1;
@@ -791,6 +797,7 @@ text-shadow: 2px 2px 5px rgb(0, 0, 0);
   color: #ff4fa3;
 
 }
+
 
 
 
